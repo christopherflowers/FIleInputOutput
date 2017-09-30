@@ -1,0 +1,43 @@
+package IOPrograms;
+import java.io.File;
+import java.util.Date;
+import java.util.Scanner;
+
+/**
+ * This program takes a file location form the user
+ * and prints out the contents to the console.
+ * 
+ * 
+ * @author Christopher Flowers
+ * @version 9-30-2017
+ *
+ */
+
+public class InputOutput {
+	public static void main(String args[]){
+  
+		//Scanner for user input
+		Scanner scan = new Scanner(System.in);
+    
+		//Prompt the user for a file location
+		System.out.println("Please type the File location you are looking for...");
+    
+		//Store the location into a variable
+		String fileName = scan.nextLine();
+    
+		//assigns the file location to an object file
+		File file = new File(fileName);
+    
+		//store the files in that location to a list of Strings
+		String[] fileList = file.list();
+    
+		//loop through the files in the specified location and print them out
+		//to the console
+		for (String name:fileList){
+			System.out.println(name);
+		}
+    
+		//close the scanner
+		scan.close();
+	}
+}
